@@ -1,0 +1,24 @@
+import { ActionType } from "../action-type";
+
+interface SearchRepositoriesAction {
+  type: ActionType.SEARCH_REPOSITORIES;
+}
+interface SearchRepositoriesSuccessAction {
+  type: ActionType.SEARCH_REPOSITORIES_SUCCESS;
+  payload: string[];
+}
+interface SearchRepositoriesErrorAction {
+  type: ActionType.SEARCH_REPOSITORIES_ERROR;
+  payload: string;
+}
+export enum ActionTypeTest {
+  test = "test",
+}
+
+export interface TestAction {
+  type: ActionTypeTest.test;
+}
+export type Action =
+  | SearchRepositoriesAction
+  | SearchRepositoriesSuccessAction
+  | SearchRepositoriesErrorAction;
